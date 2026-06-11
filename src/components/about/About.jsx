@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import ME from "../../assets/profilpict2.png";
+import wallpaper from "../../assets/wiring-0764.jpg";
 import { MdWork } from "react-icons/md";
 import { AiFillProject } from "react-icons/ai";
 
@@ -13,7 +13,7 @@ const About = () => {
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={ME} alt="About Image" />
+            <img src={wallpaper} alt="Wiring wallpaper" />
           </div>
         </div>
 

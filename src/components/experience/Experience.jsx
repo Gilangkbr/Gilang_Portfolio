@@ -3,7 +3,14 @@ import "./experience.css";
 import { FaReact } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 import { BsBootstrapFill } from "react-icons/bs";
-import { SiPhp, SiMysql, SiCodeigniter, SiHtml5, SiCss3 } from "react-icons/si";
+import {
+  SiMysql,
+  SiHtml5,
+  SiCss3,
+  SiCsharp,
+  SiDotnet,
+  SiJquery,
+} from "react-icons/si";
 const Experience = () => {
   return (
     <section id="experience">
@@ -45,7 +52,14 @@ const Experience = () => {
               <FaReact className="experience__details-icon" />
               <div>
                 <h4>React Js</h4>
-                <small className="text-light">Intermediated</small>
+                <small className="text-light">Advanced</small>
+              </div>
+            </article>
+            <article className="experience__details">
+              <SiJquery className="experience__details-icon" />
+              <div>
+                <h4>jQuery</h4>
+                <small className="text-light">Advanced</small>
               </div>
             </article>
           </div>
@@ -55,10 +69,17 @@ const Experience = () => {
           <h3>Backend-End Development</h3>
           <div className="experience__content">
             <article className="experience__details">
-              <SiPhp className="experience__details-icon" />
+              <SiCsharp className="experience__details-icon" />
               <div>
-                <h4>PHP</h4>
-                <small className="text-light">Basic</small>
+                <h4>C#</h4>
+                <small className="text-light">Advanced</small>
+              </div>
+            </article>
+            <article className="experience__details">
+              <SiDotnet className="experience__details-icon" />
+              <div>
+                <h4>ASP.NET Core</h4>
+                <small className="text-light">Advanced</small>
               </div>
             </article>
             <article className="experience__details">
@@ -66,13 +87,6 @@ const Experience = () => {
               <div>
                 <h4>MySQL</h4>
                 <small className="text-light">Intermediated</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <SiCodeigniter className="experience__details-icon" />
-              <div>
-                <h4>CodeIgniter</h4>
-                <small className="text-light">Basic</small>
               </div>
             </article>
           </div>
