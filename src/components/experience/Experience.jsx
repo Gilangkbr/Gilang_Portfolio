@@ -6,8 +6,8 @@ import { BsBootstrapFill } from "react-icons/bs";
 import {
   SiMysql,
   SiHtml5,
-  SiCss3,
-  SiCsharp,
+  SiCss,
+  SiSharp,
   SiDotnet,
   SiJquery,
 } from "react-icons/si";
@@ -28,7 +28,7 @@ const Experience = () => {
               </div>
             </article>
             <article className="experience__details">
-              <SiCss3 className="experience__details-icon" />
+              <SiCss className="experience__details-icon" />
               <div>
                 <h4>CSS</h4>
                 <small className="text-light">Intermediated</small>
@@ -69,7 +69,7 @@ const Experience = () => {
           <h3>Backend-End Development</h3>
           <div className="experience__content">
             <article className="experience__details">
-              <SiCsharp className="experience__details-icon" />
+              <SiSharp className="experience__details-icon" />
               <div>
                 <h4>C#</h4>
                 <small className="text-light">Advanced</small>

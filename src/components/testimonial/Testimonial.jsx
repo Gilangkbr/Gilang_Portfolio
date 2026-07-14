@@ -4,7 +4,7 @@ import Ava1 from "../../assets/ava1.jpg";
 import Ava2 from "../../assets/ava2.png";
 import Ava3 from "../../assets/ava3.jpg";
 
-import { Pagination } from "swiper";
+import { Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

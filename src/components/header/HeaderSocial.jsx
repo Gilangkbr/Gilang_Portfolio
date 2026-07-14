@@ -1,6 +1,5 @@
 import React from "react";
-import { BsLinkedin } from "react-icons/bs";
-import { GoMarkGithub } from "react-icons/go";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const HeaderSocial = () => {
   return (
@@ -9,7 +8,7 @@ const HeaderSocial = () => {
         <BsLinkedin />
       </a>
       <a href="https://github.com/Gilangkbr" target="_blank">
-        <GoMarkGithub />
+        <BsGithub />
       </a>
     </div>
   );
