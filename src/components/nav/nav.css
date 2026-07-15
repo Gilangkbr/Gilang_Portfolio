@@ -1,33 +1,29 @@
-nav {
-  background: rgba(0, 0, 0, 0.3);
-  width: max-content;
-  display: block;
-  padding: 0.1rem 0.5rem;
-  z-index: 2;
+.site-nav {
   position: fixed;
-  left: 50%;
-  transform: translate(-50%);
-  bottom: 0.5rem;
-  display: flex;
-  gap: 0.5rem;
-  border-radius: 3rem;
-  backdrop-filter: blur(15px);
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(7, 16, 25, .82);
+  backdrop-filter: blur(18px);
 }
+.nav__container { height: 5rem; display: flex; align-items: center; justify-content: space-between; }
+.nav__logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -.08em; }
+.nav__logo span, .footer__logo span { color: var(--color-primary); }
+.nav__links { display: flex; align-items: center; gap: 2rem; }
+.nav__links > a { position: relative; color: var(--color-muted); font-family: var(--font-display); font-size: .78rem; font-weight: 600; transition: color var(--transition); }
+.nav__links > a:not(.nav__contact)::after { content: ""; position: absolute; right: 0; bottom: -.55rem; left: 0; height: 1px; background: var(--color-primary); transform: scaleX(0); transition: transform var(--transition); }
+.nav__links > a:hover, .nav__links > a.active { color: var(--color-white); }
+.nav__links > a.active::after { transform: scaleX(1); }
+.nav__links .nav__contact { padding: .65rem 1rem; border: 1px solid var(--color-primary); border-radius: 3px; color: var(--color-primary); }
+.nav__links .nav__contact:hover { background: var(--color-primary-soft); }
+.nav__toggle { display: none; background: none; color: var(--color-white); font-size: 1.6rem; cursor: pointer; }
 
-nav a {
-  background: transparent;
-  padding: 0.9rem;
-  border-radius: 50%;
-  display: flex;
-  color: var(--color-light);
-  font-size: 1.5rem;
-}
-
-nav a:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-nav a.active {
-  background: var(--color-primary);
-  color: var(--color-white);
+@media (max-width: 720px) {
+  .nav__toggle { display: grid; place-items: center; }
+  .nav__links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; padding: 1.5rem 1rem 2rem; background: rgba(7,16,25,.98); border-bottom: 1px solid var(--color-border); flex-direction: column; align-items: stretch; gap: 0; }
+  .nav__links--open { display: flex; }
+  .nav__links > a { padding: .9rem 1rem; font-size: 1rem; }
+  .nav__links .nav__contact { margin-top: .75rem; text-align: center; }
 }

@@ -1,43 +1,38 @@
-import React from "react";
 import "./about.css";
 import wallpaper from "../../assets/wiring-0764.jpg";
-import { MdWork } from "react-icons/md";
-import { AiFillProject } from "react-icons/ai";
+import { HiArrowUpRight } from "react-icons/hi2";
 
 const About = () => {
   return (
     <section id="about">
-      <h5>Get To Know</h5>
-      <h2>About Me</h2>
-
       <div className="container about__container">
         <div className="about__me">
+          <span className="about__index">01 / ABOUT</span>
           <div className="about__me-image">
-            <img src={wallpaper} alt="Wiring wallpaper" />
+            <img src={wallpaper} alt="Electronic wiring project" />
           </div>
         </div>
 
         <div className="about__content">
-          <div className="about__cards">
-            <article className="about__card">
-              <MdWork className="about__icon" />
-              <h5>Experience</h5>
-              <small>Fresh Graduates</small>
-            </article>
-            <article className="about__card">
-              <AiFillProject className="about__icon" />
-              <h5>Projects</h5>
-              <small>2 Completed</small>
-            </article>
-          </div>
+          <p className="eyebrow">A little about me</p>
+          <h2>Building with purpose, learning with curiosity.</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora ad
-            iusto minus autem iste dolorum voluptatem delectus eveniet natus
-            cumque debitis reiciendis, quaerat architecto repellendus illo omnis
-            quod ex qui?
+            I am a developer who enjoys turning ideas into clear, usable digital
+            products. My foundation spans front-end development and backend
+            technologies, helping me understand how an experience works from
+            interface to data.
           </p>
-          <a href="#contacts" className="btn btn-primary">
-            Lets Tic Tac!
+          <p>
+            I care about thoughtful details, responsive behavior, and code that
+            remains understandable as a project grows. I am currently looking
+            for a team where I can contribute, learn, and ship meaningful work.
+          </p>
+          <div className="about__facts">
+            <div><span>Based in</span><strong>Indonesia</strong></div>
+            <div><span>Primary focus</span><strong>Front-end development</strong></div>
+          </div>
+          <a href="#contact" className="text-link">
+            Start a conversation <HiArrowUpRight />
           </a>
         </div>
       </div>

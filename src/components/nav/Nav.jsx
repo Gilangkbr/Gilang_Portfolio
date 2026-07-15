@@ -1,48 +1,71 @@
-import React from "react";
 import "./nav.css";
-import { HiHome, HiUser, HiBookOpen } from "react-icons/hi";
-import { MdHomeRepairService, MdMessage } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Skills" },
+  { href: "#services", label: "Services" },
+  { href: "#portfolio", label: "Work" },
+];
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState("#");
+  const [activeNav, setActiveNav] = useState("#home");
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("header[id], section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveNav(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-35% 0px -55%", threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  const closeMenu = (href) => {
+    setActiveNav(href);
+    setIsOpen(false);
+  };
+
   return (
-    <nav>
-      <a
-        href="#"
-        onClick={() => setActiveNav("#")}
-        className={activeNav === "#" ? "active" : ""}
-      >
-        <HiHome />
-      </a>
-      <a
-        href="#about"
-        onClick={() => setActiveNav("#about")}
-        className={activeNav === "#about" ? "active" : ""}
-      >
-        <HiUser />
-      </a>
-      <a
-        href="#experience"
-        onClick={() => setActiveNav("#experience")}
-        className={activeNav === "#experience" ? "active" : ""}
-      >
-        <HiBookOpen />
-      </a>
-      <a
-        href="#services"
-        onClick={() => setActiveNav("#services")}
-        className={activeNav === "#services" ? "active" : ""}
-      >
-        <MdHomeRepairService />
-      </a>
-      <a
-        href="#contact"
-        onClick={() => setActiveNav("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
-      >
-        <MdMessage />
-      </a>
+    <nav className="site-nav" aria-label="Main navigation">
+      <div className="container nav__container">
+        <a className="nav__logo" href="#home" onClick={() => closeMenu("#home")}>
+          GA<span>.</span>
+        </a>
+
+        <div className={`nav__links ${isOpen ? "nav__links--open" : ""}`}>
+          {links.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => closeMenu(href)}
+              className={activeNav === href ? "active" : ""}
+            >
+              {label}
+            </a>
+          ))}
+          <a className="nav__contact" href="#contact" onClick={() => closeMenu("#contact")}>
+            Let&apos;s talk
+          </a>
+        </div>
+
+        <button
+          className="nav__toggle"
+          type="button"
+          onClick={() => setIsOpen((open) => !open)}
+          aria-expanded={isOpen}
+          aria-label={isOpen ? "Close navigation" : "Open navigation"}
+        >
+          {isOpen ? <HiX /> : <HiMenuAlt3 />}
+        </button>
+      </div>
     </nav>
   );
 };
