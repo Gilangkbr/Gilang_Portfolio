@@ -5,8 +5,8 @@
 .skill-group:hover { background: var(--color-primary-soft); }
 .skill-group__icon { color: var(--color-primary); font-size: 1.55rem; }
 .skill-group h3 { margin: 3rem 0 1.5rem; }
-.skill-group li { position: relative; padding: .35rem 0 .35rem 1rem; color: var(--color-muted); font-size: .88rem; }
-.skill-group li::before { content: "/"; position: absolute; left: 0; color: var(--color-primary); }
+.skill-group li { display: flex; align-items: center; gap: .55rem; padding: .4rem 0; color: var(--color-muted); font-size: .88rem; }
+.skill-group li svg { flex: 0 0 auto; color: var(--color-primary); font-size: 1rem; }
 @media (max-width: 900px) {
   .experience__container { grid-template-columns: repeat(2, 1fr); }
   .skill-group:nth-child(2) { border-right: 0; }
